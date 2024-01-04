@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native'
+import { View, Text, Pressable, ActivityIndicator } from 'react-native'
 import { useRouter } from 'expo-router'
 import NearbyJobCard from '../../common/cards/nearby/NearbyJobCard'
 import useFetch from '../../../hooks/useFetch'
@@ -17,9 +17,9 @@ const Nearbyjobs = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Nearby Jobs</Text>
-        <TouchableOpacity>
+        <Pressable>
           <Text style={styles.headerBtn}>Show All</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
 
       <View style={styles.cardsContainer}>

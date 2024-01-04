@@ -1,16 +1,16 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, Pressable, Image } from 'react-native'
 
 import styles from './popularjobcard.style'
 import { images } from '../../../../constants'
 
 const PopularJobCard = ({ item, handleCardPress, selectedJob }) => {
   return (
-    <TouchableOpacity
+    <Pressable
       style={styles.container(selectedJob, item)}
       onPress={() => handleCardPress(item)}
     >
-      <TouchableOpacity style={styles.logoContainer(selectedJob, item)}>
+      <Pressable style={styles.logoContainer(selectedJob, item)}>
         <Image
           source={
             item.employer_logo ? { uri: item.employer_logo } : images.jobLogo
@@ -18,7 +18,7 @@ const PopularJobCard = ({ item, handleCardPress, selectedJob }) => {
           resizeMode='contain'
           style={styles.logoImage}
         />
-      </TouchableOpacity>
+      </Pressable>
       <Text style={styles.companyName} numberOfLines={1}>
         {item.employer_name}
       </Text>
@@ -29,7 +29,7 @@ const PopularJobCard = ({ item, handleCardPress, selectedJob }) => {
         </Text>
         <Text style={styles.location}>{item.job_country}</Text>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   )
 }
 
