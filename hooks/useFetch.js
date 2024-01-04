@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { mocked } from './mocked'
+import { mocked as mockedSearch } from './mocked-search'
+import { mocked as mockedJobDetails } from './mocked-job-details'
 
 const rapidApiKey = process.env.EXPO_PUBLIC_RAPID_API_KEY
 
@@ -24,7 +25,9 @@ const useFetch = (endpoint, query) => {
 
     try {
       // const response = await axios.request(options)
-      const response = mocked
+      const response =
+        endpoint === 'search' ? mockedSearch : mockedJobDetails
+
       setData(response.data.data)
     } catch (error) {
       setError(error)
