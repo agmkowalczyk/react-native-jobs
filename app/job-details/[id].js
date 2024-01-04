@@ -33,7 +33,11 @@ const JobDetails = () => {
   const [refreshing, setRefreshing] = useState(false)
   const [activeTab, setActiveTab] = useState(tabs[0])
 
-  const onRefresh = () => {}
+  const onRefresh = useCallback(() => {
+    setRefreshing(true)
+    refetch()
+    setRefreshing(false)
+  }, [])
 
   const {
     employer_logo: companyLogo,
@@ -43,7 +47,7 @@ const JobDetails = () => {
     job_description: jobDescription,
     job_highlights: jobHighlights,
     job_google_link: jobLink,
-  } = data.length  && data[0]
+  } = data.length && data[0]
 
   const displayTabContent = () => {
     switch (activeTab) {
