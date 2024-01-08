@@ -24,10 +24,7 @@ const useFetch = (endpoint, query) => {
     setIsLoading(true)
 
     try {
-      // const response = await axios.request(options)
-      const response =
-        endpoint === 'search' ? mockedSearch : mockedJobDetails
-
+      const response = await axios.request(options)
       setData(response.data.data)
     } catch (error) {
       setError(error)

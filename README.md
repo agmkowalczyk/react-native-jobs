@@ -10,7 +10,7 @@ React Native - Job Finder based on RapidAPI (React Native, Expo, RapidAPI)
 </p>
 
 ## Live Preview
-[Click here](https://expo.dev/accounts/agmkowalczyk/projects/react-native-jobs/builds/7c19d215-a361-4f5c-8cb5-8c1bbc6b7e5e)
+-> Check the link in About section on the right
 
 
 
